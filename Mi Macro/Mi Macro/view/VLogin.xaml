@@ -6,8 +6,11 @@
         <ResourceDictionary>
             <Style TargetType="Frame" BasedOn="{StaticResource RoundedEntryFrameStyle}" />
         </ResourceDictionary>
-    </ContentPage.Resources>x`
+    </ContentPage.Resources>
     
+    
+    
+
     <ContentPage.Content>
         <StackLayout Padding="16">
             <Image Source="logo_512px.png" HorizontalOptions="CenterAndExpand" WidthRequest="160" HeightRequest="160" Margin="0,40"/>
