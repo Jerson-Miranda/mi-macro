@@ -10,8 +10,7 @@ namespace Mi_Macro
         public App()
         {
             InitializeComponent();
-
-            MainPage = new VLogin();
+            MainPage = new NavigationPage(new VLogin());
         }
 
         protected override void OnStart()

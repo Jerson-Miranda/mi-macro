@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.VQR"
+             BackgroundColor="#f2f2f2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,20">
+                <Label Text="Code Generate" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Label Text="Presiona para generar un codigo QR" TextColor="#000" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
+            <Frame BackgroundColor="#fff" CornerRadius="10" WidthRequest="250"  HeightRequest="250" HorizontalOptions="Center" Margin="0,0,0,20">
+                <Image Source="qr_code_32px.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
+            <Button x:Name="btnCodeGenerate" Text="Start generate" Clicked="btnCodeGenerate_Clicked" CornerRadius="20" BackgroundColor="#009BAA" TextColor="#fff" Margin="16,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -9,21 +9,16 @@ using Xamarin.Forms.Xaml;
 
 namespace Mi_Macro.view
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class VLogin : ContentPage
-    {
-        public VLogin()
-        {
-            InitializeComponent();
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class VSign : ContentPage
+	{
+		public VSign ()
+		{
+			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void btnSignIn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new VSign());
-        }
-
-        private async void btnLogIn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Home());
         }

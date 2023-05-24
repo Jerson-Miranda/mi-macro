@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.Home"
+             BackgroundColor="#f2f2f2">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" BasedOn="{StaticResource RoundedEntryFrameStyle}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="16" BackgroundColor="#ffffff" Margin="0,0,0,10" CornerRadius="0" HeightRequest="180">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Grid.Column="0" BackgroundColor="#CCCCCC" ImageSource="user_32px.png" VerticalOptions="Center" CornerRadius="30" WidthRequest="50" Margin="0,0,5,20"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Hello!" TextColor="#333333" FontSize="16"/>
+                            <Label Text="Jerson Miranda" TextColor="#333333" FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnQR" Clicked="btnQR_Clicked" Grid.Column="0" BackgroundColor="#0000FF" ImageSource="qr_code_32px.png" CornerRadius="10" />
+                        <Button Grid.Column="1" BackgroundColor="#009BAA" ImageSource="map_32px.png" CornerRadius="10" />
+                        <Button x:Name="btnNotification" Clicked="btnNotification_Clicked" Grid.Column="2" BackgroundColor="#009BAA" ImageSource="notification_32px.png" CornerRadius="10" />
+                        <Button x:Name="btnChat" Clicked="btnChat_Clicked_1" Grid.Column="3" BackgroundColor="#009BAA" ImageSource="chat_32px.png" CornerRadius="10" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Padding="16,0,16,0">
+                <Frame Padding="16" BackgroundColor="#ffffff" Margin="0,0,0,10" CornerRadius="20" HeightRequest="150" BorderColor="#009BAA">
+                    <StackLayout>
+                        <Label Text="MiMacro" TextColor="#333" FontSize="20" FontAttributes="Bold"/>
+                        <Label Text="Your available balance:" FontSize="16" HorizontalTextAlignment="End"/>
+                        <Label Text="$3465.96" TextColor="#009BAA" FontSize="28" HorizontalTextAlignment="End" FontAttributes="Bold" Margin="0,0,0,15"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Label Grid.Column="0" Text="*** 9302" FontSize="16" FontAttributes="Italic" VerticalTextAlignment="Center"/>
+                            <Image Grid.Column="1" Source="mastercard_20px.png" HorizontalOptions="End"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Padding="16" BackgroundColor="#ffffff" Margin="0,0,0,10" CornerRadius="10">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Text="Recent movements" TextColor="#333" FontSize="18" FontAttributes="Bold" Margin="0,16"/>
+                            <Label Grid.Column="1" Text="See more" TextColor="#0000FF" FontSize="14" FontAttributes="Bold" Margin="0,16" VerticalOptions="End" HorizontalTextAlignment="End"/>
+                        </Grid>
+                       
+                        <ListView x:Name="listMovement" ItemsSource="{Binding listMovements}" HasUnevenRows="True" Margin="16,0,16,0">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width=".2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Frame Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="#f2f2f2" CornerRadius="30" Margin="10" >
+
+                                            </Frame>
+                                            <Label Grid.Column="1" Grid.Row="1" Text="{Binding date}" TextColor="#000"/>
+                                            <Label Grid.Column="2" Grid.Row="0" Text="{Binding time}" HorizontalTextAlignment="End"/>
+                                            <Label Grid.Column="2" Grid.Row="1" Text="{Binding amount, StringFormat='-${0}'}" FontSize="18" TextColor="red" HorizontalTextAlignment="End" FontAttributes="Bold"/>
+                                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding line}" FontAttributes="Bold"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

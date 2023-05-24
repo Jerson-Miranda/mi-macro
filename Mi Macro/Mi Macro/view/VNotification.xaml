@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.VNotification"
+             BackgroundColor="#fff">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,20">
+                <Label Text="Notifications" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <ListView ItemsSource="{Binding listNotification}" HasUnevenRows="True" Margin="16,0,16,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Frame Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="#f2f2f2" CornerRadius="30" Margin="10" >
+
+                                </Frame>
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding title}" TextColor="#000"/>
+                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding description}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
