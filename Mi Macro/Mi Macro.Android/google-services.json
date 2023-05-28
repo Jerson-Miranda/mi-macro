@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "789322128208",
+    "firebase_url": "https://mimacro-447ef-default-rtdb.firebaseio.com",
+    "project_id": "mimacro-447ef",
+    "storage_bucket": "mimacro-447ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789322128208:android:2bd19f46457e9e0c9caa55",
+        "android_client_info": {
+          "package_name": "com.companyname.mi_macro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHUTYlMDl01U1QM_bc68xz78NbBKMGnHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

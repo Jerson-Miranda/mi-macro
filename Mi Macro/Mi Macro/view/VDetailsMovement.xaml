@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.VDetailsMovement"
+             BackgroundColor="#f2f2f2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Clicked="btnBack_Clicked" Grid.Column="0" ImageSource="back_24px.png" BackgroundColor="Transparent" />
+                    <Label Grid.Column="1" Text="Details Movement" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#FFF" CornerRadius="20" Margin="16,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" x:Name="lbLine" TextColor="#000" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="1" Grid.Row="1" x:Name="lbDate" TextColor="#000" FontSize="14"/>
+                    <Label Grid.Column="1" Grid.Row="2" x:Name="lbTime" TextColor="#000" FontSize="14"/>
+                    <Label Grid.Column="1" Grid.Row="3" x:Name="lbAmount" TextColor="#FF0000" FontSize="14" FontAttributes="Bold"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Date" TextColor="#000" FontSize="14"/>
+                    <Label Grid.Column="0" Grid.Row="2" Text="Time" TextColor="#000" FontSize="14"/>
+                    <Label Grid.Column="0" Grid.Row="3" Text="Charge" TextColor="#000" FontSize="14"/>
+                </Grid>
+            </Frame>
+            <Frame x:Name="fQR" BackgroundColor="#fff" CornerRadius="10" WidthRequest="250"  HeightRequest="250" HorizontalOptions="Center" Margin="0,20">
+                <StackLayout x:Name="stkQR">
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

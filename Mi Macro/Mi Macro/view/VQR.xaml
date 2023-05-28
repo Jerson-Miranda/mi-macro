@@ -1,18 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mi_Macro.view.VQR"
+             x:Class="Mi_Macro.view.VQR"    
              BackgroundColor="#f2f2f2">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#fff" Margin="0,0,0,20">
-                <Label Text="Code Generate" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Clicked="btnBack_Clicked" Grid.Column="0" ImageSource="back_24px.png" BackgroundColor="Transparent" />
+                    <Label Grid.Column="1" Text="Code Generate" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
             </Frame>
-            <Label Text="Presiona para generar un codigo QR" TextColor="#000" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
-            <Frame BackgroundColor="#fff" CornerRadius="10" WidthRequest="250"  HeightRequest="250" HorizontalOptions="Center" Margin="0,0,0,20">
-                <Image Source="qr_code_32px.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            <Frame BackgroundColor="#fff" CornerRadius="20" Margin="16,0,16,0">
+                <StackLayout Padding="8">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width=".5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="lbTarget" Grid.Column="0" Grid.Row="0" TextColor="#000" FontSize="16" VerticalTextAlignment="Center"/>
+                        <Label x:Name="lbBalance" Grid.Column="1" Grid.Row="0" TextColor="Green" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                    </Grid>
+                </StackLayout>
             </Frame>
-            <Button x:Name="btnCodeGenerate" Text="Start generate" Clicked="btnCodeGenerate_Clicked" CornerRadius="20" BackgroundColor="#009BAA" TextColor="#fff" Margin="16,0"/>
+            <Frame BackgroundColor="#fff" CornerRadius="20" Margin="16,0,16,10">
+                <StackLayout Padding="8">
+                    <Label Text="Summary" TextColor="#000" FontSize="18" FontAttributes="Bold"/>
+                    <Picker x:Name="linePicker" Title="Select a line" FontSize="14" SelectedIndexChanged="linePicker_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Line 1 - MiMacro Calzada</x:String>
+                                <x:String>Line 2 - MiMacro Periferico</x:String>
+                                <x:String>Line 3 - MiMacro Centro</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Grid.Row="0" Text="Balance" TextColor="#000" FontSize="14"/>
+                        <Label x:Name="lbBalance2" Grid.Column="1" Grid.Row="0" TextColor="Green" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                        <Label Grid.Column="0" Grid.Row="1" Text="Charge" TextColor="#000" FontSize="14"/>
+                        <Label x:Name="lbCharge" Text="$0" Grid.Column="1" Grid.Row="1" TextColor="#FF0000" FontSize="14" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+
+                    </Grid>
+                    <BoxView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#f2f2f2" HeightRequest="1"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Column="0" Grid.Row="0" Text="Your target" TextColor="#000" FontSize="16"/>
+                        <Label x:Name="lbYourTarget" Grid.Column="1" Grid.Row="0" TextColor="Black" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="End"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="fQR" BackgroundColor="#fff" CornerRadius="10" WidthRequest="200"  HeightRequest="200" HorizontalOptions="Center" Margin="0,0,0,20">
+                <StackLayout x:Name="stkQR">
+                </StackLayout>
+            </Frame>
+            <Frame VerticalOptions="EndAndExpand">
+                <Button x:Name="btnCodeGenerate" Text="Start generate" Clicked="btnCodeGenerate_Clicked" CornerRadius="20" BackgroundColor="#009BAA" TextColor="#fff" VerticalOptions="EndAndExpand"/>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

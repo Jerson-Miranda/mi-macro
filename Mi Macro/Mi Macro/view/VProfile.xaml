@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.VProfile"
+             BackgroundColor="#f2f2f2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Clicked="btnBack_Clicked" Grid.Column="0" ImageSource="back_24px.png" BackgroundColor="Transparent" />
+                    <Label Grid.Column="1" Text="Profile" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Button x:Name="btnEdit" Clicked="btnEdit_Clicked" Grid.Column="2" ImageSource="edit_24px.png" BackgroundColor="Transparent"/>
+                </Grid>
+            </Frame>
+
+            <Button ImageSource="user_32px.png" WidthRequest="120" HeightRequest="120" IsEnabled="False" HorizontalOptions="CenterAndExpand" CornerRadius="100" Margin="0,16"/>
+            <Frame Padding="16" BackgroundColor="#ffffff" Margin="16,0" CornerRadius="20">
+                <StackLayout>
+                    <Label Text="First name" TextColor="#000" FontSize="16" FontAttributes="Bold"/>
+                    <Entry x:Name="txtFirstName" IsEnabled="False"  FontSize="14" Margin="0,0,0,10"/>
+                    <Label Text="Last name" TextColor="#000" FontSize="16" FontAttributes="Bold"/>
+                    <Entry x:Name="txtLastName" IsEnabled="False"  FontSize="14" Margin="0,0,0,10"/>
+                    <Label Text="Username" TextColor="#000" FontSize="16" FontAttributes="Bold"/>
+                    <Entry x:Name="txtUsername" IsEnabled="False" FontSize="14" Margin="0,0,0,10"/>
+                    <Label Text="Password" TextColor="#000" FontSize="16" FontAttributes="Bold"/>
+                    <Entry x:Name="txtPassword" IsEnabled="False"  IsPassword="True" FontSize="14" Margin="0,0,0,10"/>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnSave" Clicked="btnSave_Clicked" IsVisible="false" Text="Save changes" HorizontalOptions="CenterAndExpand" CornerRadius="20" Padding="16" Margin="0,16"/>
+            <Frame Padding="16" BackgroundColor="#ffffff" VerticalOptions="EndAndExpand">
+                <Button x:Name="btnLogOut" Clicked="btnLogOut_Clicked" BackgroundColor="#009BAA" Text="Log Out" TextColor="#fff" CornerRadius="20"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

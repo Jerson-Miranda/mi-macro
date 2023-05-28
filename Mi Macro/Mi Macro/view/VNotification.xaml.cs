@@ -36,5 +36,9 @@ namespace Mi_Macro.view
 			BindingContext = this;
         }
 
-	}
+        private async void btnBack_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }

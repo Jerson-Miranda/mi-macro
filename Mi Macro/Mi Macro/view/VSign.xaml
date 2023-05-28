@@ -15,16 +15,16 @@
             <Label Text="Register" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
             <Label Text="Enter your data." TextColor="#333333" FontSize="14" Margin="0,0,0,10" HorizontalTextAlignment="Center"/>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,10">
-                <Entry Placeholder="First Name" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
+                <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
             </Frame>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,10">
-                <Entry Placeholder="Last Name" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
+                <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
             </Frame>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,10">
-                <Entry Placeholder="Username" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
+                <Entry x:Name="txtUsername" Placeholder="Username" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
             </Frame>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,20">
-                <Entry Placeholder="Create password" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
+                <Entry  x:Name="txtPassword" Placeholder="Create password" TextColor="#333333" FontSize="16" BackgroundColor="Transparent"/>
             </Frame>
             <Button x:Name="btnSignIn" Clicked="btnSignIn_Clicked" Text="Sign in" TextColor="#ffffff" BackgroundColor="#009BAA" CornerRadius="10"/>
         </StackLayout>

@@ -15,10 +15,10 @@
             <Label Text="Welcome Back!" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
             <Label Text="Enter your username and password to continue." TextColor="#333333" FontSize="14" Margin="0,0,0,10" HorizontalTextAlignment="Center"/>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,10">
-                <Entry Placeholder="Username" TextColor="#333333" FontSize="16" BackgroundColor="Transparent" />
+                <Entry x:Name="txtUsername" Placeholder="Username" TextColor="#333333" FontSize="16" BackgroundColor="Transparent" />
             </Frame>
             <Frame Style="{StaticResource RoundedEntryFrameStyle}" Margin="0,0,0,10">
-                <Entry Placeholder="Password" TextColor="#333333" FontSize="16" IsPassword="True" BackgroundColor="Transparent"/>
+                <Entry x:Name="txtPassword" Placeholder="Password" TextColor="#333333" FontSize="16" IsPassword="True" BackgroundColor="Transparent"/>
             </Frame>
             <Label Text="Forgot password?" TextTransform="None" HorizontalTextAlignment="End" Margin="0,0,0,20"/>
             <Button x:Name="btnLogIn" Clicked="btnLogIn_Clicked" Text="Log in" TextColor="#ffffff" BackgroundColor="#009BAA" CornerRadius="10"/>

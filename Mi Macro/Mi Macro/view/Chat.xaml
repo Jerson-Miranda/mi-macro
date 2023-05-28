@@ -1,11 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mi_Macro.view.Chat">
+             x:Class="Mi_Macro.view.Chat"
+             BackgroundColor="#f2f2f2">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#fff" Margin="0,0,0,20">
-                <Label Text="Chat" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Clicked="btnBack_Clicked" Grid.Column="0" ImageSource="back_24px.png" BackgroundColor="Transparent" />
+                    <Label Grid.Column="1" Text="Chat" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+            <Frame VerticalOptions="EndAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".08*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Column="0" Source="icons_24px.png"/>
+                    <Entry Grid.Column="1" Placeholder="Enter message..."/>
+                    <Button Grid.Column="2" BackgroundColor="Transparent" ImageSource="sent_24px.png"/>
+                </Grid>
+                
             </Frame>
         </StackLayout>
     </ContentPage.Content>
