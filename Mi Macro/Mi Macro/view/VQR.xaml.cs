@@ -28,7 +28,7 @@ namespace Mi_Macro.view
 
         protected override async void OnAppearing()
         {
-            var (firstName, lastName, balance, target) = await userRepository.GetName(VLogin.CurrentUsername);
+            var (firstName, lastName, balance, target, interbankKey) = await userRepository.GetName(VLogin.CurrentUsername);
             lbBalance.Text = $"${balance}";
             lbBalance2.Text = $"${balance}";
             lbTarget.Text = "Your target: ****" + target.Substring(target.Length - 4);
@@ -36,7 +36,9 @@ namespace Mi_Macro.view
             balancee = balance;
             await InitializePicker();
         }
-            private async void btnCodeGenerate_Clicked(object sender, EventArgs e)
+
+
+        private async void btnCodeGenerate_Clicked(object sender, EventArgs e)
         {
             string balanceText = lbYourTarget.Text.TrimStart('$');
             if (double.TryParse(balanceText, out double balanceValue) && balanceValue < 0)

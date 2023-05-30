@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mi_Macro.view.VTarget"
+             BackgroundColor="#f2f2f2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#fff" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width=".1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnBack" Clicked="btnBack_Clicked" Grid.Column="0" ImageSource="back_24px.png" BackgroundColor="Transparent" />
+                    <Label Grid.Column="1" Text="My Target" TextColor="#009BAA" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+            <Frame Padding="16" BackgroundColor="#ffffff" CornerRadius="20" HeightRequest="150" BorderColor="#009BAA" Margin="16,10">
+                <StackLayout>
+                    <Label Text="MiMacro" TextColor="#333" FontSize="20" FontAttributes="Bold"/>
+                    <Label Grid.Column="0" Text="Your account number:" FontSize="16" HorizontalTextAlignment="End"/>
+                    <Label x:Name="lbAccountNumber" TextColor="#009BAA" FontSize="24" HorizontalTextAlignment="Center" FontAttributes="Bold" Margin="0,0,0,15"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width=".3*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label x:Name="lbFullname" Grid.Column="0" FontSize="16" FontAttributes="Italic" VerticalTextAlignment="Center"/>
+                        <Image Grid.Column="1" Source="mastercard_20px.png" HorizontalOptions="End"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#fff" CornerRadius="20" Margin="16,0">
+                <StackLayout>
+                    <Label Text="Cardholder" FontAttributes="Bold" TextColor="#000" />
+                    <Label x:Name="lbCardholder" Margin="0,0,0,15"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width=".2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Interbank Key" FontAttributes="Bold" TextColor="#000" />
+                        <Label Grid.Column="0" Grid.Row="1" x:Name="lbInterbankKey" VerticalOptions="Center"/>
+                        <Button Grid.Column="1" Grid.Row="1" x:Name="btnInterbankKey" Clicked="btnInterbankKey_Clicked" ImageSource="copy_24px.png" BackgroundColor="Transparent"/>
+                        <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Text="Account number" FontAttributes="Bold" TextColor="#000" />
+                        <Label Grid.Column="0" Grid.Row="3" x:Name="lbAccountNumber2" VerticalOptions="Center"/>
+                        <Button Grid.Column="1" Grid.Row="3" x:Name="btnAccountNumber2" Clicked="btnAccountNumber2_Clicked" ImageSource="copy_24px.png" BackgroundColor="Transparent"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

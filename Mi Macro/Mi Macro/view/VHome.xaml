@@ -38,6 +38,9 @@
 
             <StackLayout Padding="16,0,16,0">
                 <Frame Padding="16" BackgroundColor="#ffffff" Margin="0,0,0,10" CornerRadius="20" HeightRequest="200" BorderColor="#009BAA">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <Label Text="MiMacro" TextColor="#333" FontSize="20" FontAttributes="Bold"/>
                         <Grid>

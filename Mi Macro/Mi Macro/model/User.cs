@@ -9,6 +9,7 @@ namespace Mi_Macro.model
         public string lastName { get; set; }
         public double balance { get; set; }
         public string target { get; set; }
+        public string interbankKey { get; set; }
         public string username { get; set; }
         public string password { get; set; }
 

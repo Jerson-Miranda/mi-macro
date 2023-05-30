@@ -25,11 +25,12 @@ namespace Mi_Macro.view
 
         protected override async void OnAppearing()
         {
-            var (firstName, lastName, balance, target) = await userRepository.GetName(VLogin.CurrentUsername);
+            var (firstName, lastName, balance, target, interbankKey) = await userRepository.GetName(VLogin.CurrentUsername);
             lbName.Text = $"{firstName} {lastName}";
             lbBalance.Text = $"${balance}";
             balancee = $"${balance}";
             lbTarget.Text = "****" + target.Substring(target.Length - 4);
+
             var movements = await movementRepository.GetAll(VLogin.CurrentUsername);
             movementsList.ItemsSource = movements.Take(6);
             if (movements.Count() > 6)
@@ -98,6 +99,11 @@ namespace Mi_Macro.view
         private async void btnProfile_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VProfile());
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new VTarget());
         }
     }
 }

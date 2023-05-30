@@ -36,6 +36,7 @@ namespace Mi_Macro.view
                 user.lastName = lastName.Trim();
                 user.balance = 0;
                 user.target = randomCode(16);
+                user.interbankKey = randomCode(18);
                 user.username = username.Trim();
                 user.password = password;
                 var isSaved = await userRepository.Save(user);

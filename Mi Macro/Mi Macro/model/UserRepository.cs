@@ -35,7 +35,7 @@ namespace Mi_Macro.model
                 password = item.Object.password
             }).ToList();
         }
-        public async Task<(string FirstName, string LastName, double balance, string target)> GetName(string username)
+        public async Task<(string FirstName, string LastName, double balance, string target, string interbankKey)> GetName(string username)
         {
             var users = (await fbClient
                 .Child(nameof(User))
@@ -43,7 +43,7 @@ namespace Mi_Macro.model
                 .Where(u => u.Object.username == username)
                 .FirstOrDefault();
 
-            return users != null ? (users.Object.firstName, users.Object.lastName, users.Object.balance, users.Object.target) : (null, null, 0, null);
+            return users != null ? (users.Object.firstName, users.Object.lastName, users.Object.balance, users.Object.target, users.Object.interbankKey) : (null, null, 0, null, null);
         }
 
         public async Task<(string FirstName, string LastName, string username, string password)> GetDataProfile(string username)
